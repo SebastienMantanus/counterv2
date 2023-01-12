@@ -40,15 +40,21 @@ function App() {
                 for (let i = 0; i < counterReapeat2.length; i++) {
                   counterReapeat2.pop();
                 }
-                counter(counterReapeat2);
+                setCounter(counterReapeat2);
               }}
             />
           )}
         </section>
         <section>
           <div className="counters">
-            {counter.map((element) => {
-              return <Counter counter={counter} setCounter={setCounter} />;
+            {counter.map((element, index) => {
+              return (
+                <Counter
+                  index={index}
+                  counter={counter}
+                  setCounter={setCounter}
+                />
+              );
             })}
           </div>
         </section>
